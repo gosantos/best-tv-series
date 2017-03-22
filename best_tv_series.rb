@@ -5,11 +5,16 @@ require_relative "lib/model/question"
 #adding Series
 
 series = []
-series.push Series.new('A', 'House of Cards')
-series.push Series.new('B', 'Game of Thrones')
-series.push Series.new('C', 'Lost')
-series.push Series.new('D', 'Breaking Bad')
-series.push Series.new('E', 'Silicon Valley')
+series.push Series.new('A', 'House of Cards', 'Você é House of Cards: ataca o problema com método e faz de
+tudo para resolver a situação.')
+series.push Series.new('B', 'Game of Thrones', 'Você é Game of Thrones: não tem muita delicadeza nas ações,
+mas resolve o problema de forma prática.')
+series.push Series.new('C', 'Lost', 'Você é Lost: faz as coisas sem ter total certeza se é o caminho certo ou se faz
+sentido, mas no final dá tudo certo.')
+series.push Series.new('D', 'Breaking Bad', 'Você é Breaking Bad: pra fazer acontecer você toma a liderança,
+mas sempre contando com seus parceiros.')
+series.push Series.new('E', 'Silicon Valley', 'Você é Silicon Valley: vive a tecnologia o tempo todo e faz disso um
+mantra para cada situação no dia.')
 
 #adding Questions and its Answers
 
