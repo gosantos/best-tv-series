@@ -7,6 +7,8 @@ class UserInterface
 
   def run(questions)
     print_questions(questions)
+
+    @user_answers
   end
 
   def print_questions(questions)
@@ -44,7 +46,7 @@ class UserInterface
     when 'e'
       @user_answers.push answers[4]
     else
-      print("\n")
+      puts "Alternativa inválida.\n"
     end
 
   end

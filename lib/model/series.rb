@@ -1,10 +1,10 @@
 class Series
-  attr_accessor :id, :name, :answer_quote
+  attr_accessor :id, :name, :quote
 
-  def initialize(id, name, answer_quote)
+  def initialize(id, name, quote)
     @id = id
     @name = name
-    @answer_quote = answer_quote
+    @quote = quote
   end
-  
+
 end

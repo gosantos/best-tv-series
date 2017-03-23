@@ -2,20 +2,16 @@ require_relative "lib/model/series"
 require_relative "lib/model/answer"
 require_relative "lib/model/question"
 require_relative "lib/util/user_interface"
+require_relative "lib/answers_evaluator"
 
 #adding Series
 
 series = []
-series.push Series.new('A', 'House of Cards', 'Você é House of Cards: ataca o problema com método e faz de
-tudo para resolver a situação.')
-series.push Series.new('B', 'Game of Thrones', 'Você é Game of Thrones: não tem muita delicadeza nas ações,
-mas resolve o problema de forma prática.')
-series.push Series.new('C', 'Lost', 'Você é Lost: faz as coisas sem ter total certeza se é o caminho certo ou se faz
-sentido, mas no final dá tudo certo.')
-series.push Series.new('D', 'Breaking Bad', 'Você é Breaking Bad: pra fazer acontecer você toma a liderança,
-mas sempre contando com seus parceiros.')
-series.push Series.new('E', 'Silicon Valley', 'Você é Silicon Valley: vive a tecnologia o tempo todo e faz disso um
-mantra para cada situação no dia.')
+series.push Series.new('A', 'House of Cards', 'Você é House of Cards: ataca o problema com método e faz de tudo para resolver a situação.')
+series.push Series.new('B', 'Game of Thrones', 'Você é Game of Thrones: não tem muita delicadeza nas ações, mas resolve o problema de forma prática.')
+series.push Series.new('C', 'Lost', 'Você é Lost: faz as coisas sem ter total certeza se é o caminho certo ou se faz sentido, mas no final dá tudo certo.')
+series.push Series.new('D', 'Breaking Bad', 'Você é Breaking Bad: pra fazer acontecer você toma a liderança, mas sempre contando com seus parceiros.')
+series.push Series.new('E', 'Silicon Valley', 'Você é Silicon Valley: vive a tecnologia o tempo todo e faz disso um mantra para cada situação no dia.')
 
 #adding Questions and its Answers
 
@@ -67,4 +63,7 @@ question.add_answer Answer.new('e', "Acho que descobri uma forma de fazer aquela
 questions.push question
 
 ui = UserInterface.new
-ui.run(questions)
+user_answers = ui.run(questions)
+
+answers_evaluator = AnswersEvaluator.new
+answers_evaluator.evaluate(series, user_answers)

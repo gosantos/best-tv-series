@@ -20,3 +20,7 @@ Testes
 #edcba
 #abcde
 #aaabb
+
+A classe user_interface, mostra as perguntas e alternativas para o usário, ela também salva as respostas.
+
+Na classe answers_evaluator as respostas do usuário são processadas.
