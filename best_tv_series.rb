@@ -1,6 +1,7 @@
 require_relative "lib/model/series"
 require_relative "lib/model/answer"
 require_relative "lib/model/question"
+require_relative "lib/util/user_interface"
 
 #adding Series
 
@@ -64,3 +65,6 @@ question.add_answer Answer.new('d', "Vou de carro, mas ofereço uma carona para 
 question.add_answer Answer.new('e', "Acho que descobri uma forma de fazer aquela senhora rodar no Firefox.")
 
 questions.push question
+
+ui = UserInterface.new
+ui.run(questions)

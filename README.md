@@ -13,3 +13,10 @@ O modelo Answer, recebe series_id (identificador que será usado para saber a qu
 O modelo Series, recebe o id e o name (nome da serie)
 
 Optei por não criar um arquivo de parser e usar tokens ou uma regular expression e parsear os dados referentes as series, perguntas e respostas. Então, acabei inicializando os dados no arquivo de entrada da aplicação.
+
+Testes
+#ccaee
+#eeacc
+#edcba
+#abcde
+#aaabb
