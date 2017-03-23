@@ -2,7 +2,7 @@ require 'date'
 
 class AnswersEvaluator
   def initialize
-    @vote_counter = { a: [0, Time.new], b: [0, Time.new], c: [0, Time.new], d: [0, Time.new], e: [0, Time.new] }
+    @vote_counter = { a: [0, nil], b: [0, nil], c: [0, nil], d: [0, nil], e: [0, nil] }
   end
 
   def evaluate(series, user_answers)
@@ -14,7 +14,7 @@ class AnswersEvaluator
 
     series.each do |serie|
       if max_voted.has_key?(serie.id.downcase.to_sym)
-        puts "\n#{serie.quote}"
+        return serie.quote
       end
     end
 
