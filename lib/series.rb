@@ -1,5 +1,5 @@
 class Series
-  attr_accessor :id, :name, :quote
+  attr_reader :id, :name, :quote
 
   def initialize(id, name, quote)
     @id = id

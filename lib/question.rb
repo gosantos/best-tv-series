@@ -1,5 +1,5 @@
 class Question
-  attr_accessor :id, :title, :answers
+  attr_reader :id, :title, :answers
 
   def initialize(id, title)
     @id = id

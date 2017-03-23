@@ -1,7 +1,7 @@
-require_relative "lib/model/series"
-require_relative "lib/model/answer"
-require_relative "lib/model/question"
-require_relative "lib/util/user_interface"
+require_relative "lib/series"
+require_relative "lib/answer"
+require_relative "lib/question"
+require_relative "lib/user_interface"
 require_relative "lib/answers_evaluator"
 
 #adding Series
