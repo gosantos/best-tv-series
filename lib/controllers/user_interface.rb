@@ -38,9 +38,11 @@ class UserInterface
   end
 
   def get_user_entry(answers)
-    puts CommonBundle::ALTERNATIVES_USER_MSG
-
     letters = ('a'..'e').to_a
-    @user_answers.push answers[letters.index(gets.chomp.downcase)]
+    begin
+      puts CommonBundle::ALTERNATIVES_USER_MSG
+      entry = gets.chomp.downcase
+    end while !letters.include? entry
+    @user_answers.push answers[letters.index(entry)]
   end
 end
