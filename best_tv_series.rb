@@ -1,10 +1,9 @@
 require_relative "lib/series"
 require_relative "lib/series_bundle"
-
 require_relative "lib/question"
 require_relative "lib/questions_bundle"
-
 require_relative "lib/answer"
+require_relative "lib/answers_bundle"
 require_relative "lib/user_interface"
 require_relative "lib/answers_evaluator"
 
