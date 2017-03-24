@@ -45,25 +45,16 @@ $ bin/rspec --format doc
 ```
 
 ## Solução
-Primeiramente eu comecei criando os diretorios para criar um ambiente organizado e facilmente testável.
+Como a ideia era criar uma aplicação de console sem o uso de dependencias externas, eu tentei manter a aplicação o mais simples possível.
 
-Após, comecei criando os modelos: Question, Answer e Series
+Primeiramente eu criei as classes Question, Answer e Series, que são as classes que modelam os principais tipos de dados do problema.
 
-O modelo Question, recebe o id (número da pergunta), o title (titulo da pergunta) e as answers (possiveis respostas).
+A classe UserInterface ficou com a responsabilidade de mostrar as perguntas e alternativas para o usuário, assim como também armazenar as escolhas dele.
 
-O modelo Answer, recebe series_id (identificador que será usado para saber a qual serie corresponde essa alternativa, visto que as alternativas devem ser randômicas) e o title (conteudo da pergunta)
+Depois a classe que implementa o algoritmo foi desenvolvida: AnswersEvaluator, juntamente com os testes referentes a essa classe também.
 
-O modelo Series, recebe o id e o name (nome da serie)
+Quando tudo estava funcionando como esperado, comecei o refactoring seguindo o ciclo: vermelho->verde->refactoring.
 
-Optei por não criar um arquivo de parser e usar tokens ou uma regular expression e parsear os dados referentes as series, perguntas e respostas. Então, acabei inicializando os dados no arquivo de entrada da aplicação.
+Nesse ponto, os bundles foram adicionados para facilitar em casos de alteração das mensagens.
 
-Testes
-#ccaee
-#eeacc
-#edcba
-#abcde
-#aaabb
-
-A classe user_interface, mostra as perguntas e alternativas para o usário, ela também salva as respostas.
-
-Na classe answers_evaluator as respostas do usuário são processadas.
+Por fim, utilizei um analizador de código estático para remover o máximo de Code Smell possível.
