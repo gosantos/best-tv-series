@@ -1,3 +1,4 @@
+# this class describes an Answer model
 class Answer
   attr_reader :series_id, :title
 
@@ -5,5 +6,4 @@ class Answer
     @series_id = series_id
     @title = title
   end
-
 end

@@ -1,7 +1,10 @@
+require_relative 'common_bundle'
+
+# this class is responsbile to interact with the user
 class UserInterface
   attr_accessor :user_answers
 
-  def initialize()
+  def initialize
     @user_answers = []
   end
 
@@ -15,10 +18,10 @@ class UserInterface
     numbers = (1..5).to_a
 
     questions.each do |question|
-        puts "#{numbers.slice!(0)}. #{question.title}"
-        answers = question.answers
-        print_answers(answers)
-        get_user_entry(answers)
+      puts "#{numbers.slice!(0)}. #{question.title}"
+      answers = question.answers
+      print_answers(answers)
+      get_user_entry(answers)
     end
   end
 
@@ -31,8 +34,7 @@ class UserInterface
   end
 
   def get_user_entry(answers)
-    #TODO COLOCAR NUM HELPER
-    puts "Escolha uma das alternativas:"
+    puts CommonBundle::ALTERNATIVES_USER_MSG
 
     case gets.chomp.downcase
     when 'a'
@@ -46,9 +48,7 @@ class UserInterface
     when 'e'
       @user_answers.push answers[4]
     else
-      puts "Alternativa inválida.\n"
+      puts CommonBundle::INVALID_ALTERNATIVE_MSG
     end
-
   end
-
 end

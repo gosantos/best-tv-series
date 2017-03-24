@@ -1,3 +1,4 @@
+# this class describes a Series model
 class Series
   attr_reader :id, :name, :quote
 
@@ -6,5 +7,4 @@ class Series
     @name = name
     @quote = quote
   end
-
 end

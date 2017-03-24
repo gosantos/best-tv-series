@@ -1,11 +1,10 @@
 require 'answers_evaluator'
 require 'series'
-require "series_bundle"
+require 'series_bundle'
 require 'answer'
-require "answers_bundle"
+require 'answers_bundle'
 
-RSpec.describe AnswersEvaluator, "#evaluate" do
-
+RSpec.describe AnswersEvaluator, '#evaluate' do
   before do
     @series = []
     @series.push Series.new(SeriesBundle::HOUSE_OF_CARDS_ID, SeriesBundle::HOUSE_OF_CARDS_NAME, SeriesBundle::HOUSE_OF_CARDS_QUOTE)
@@ -15,8 +14,8 @@ RSpec.describe AnswersEvaluator, "#evaluate" do
     @series.push Series.new(SeriesBundle::SILICON_VALLEY_ID, SeriesBundle::SILICON_VALLEY_NAME, SeriesBundle::SILICON_VALLEY_QUOTE)
   end
 
-  describe "something" do
-    it "ccaee" do
+  describe 'something' do
+    it 'ccaee' do
       user_answers = []
       user_answers.push Answer.new(AnswersBundle::QUESTION_1_ANSWER_C_SERIE_ID, AnswersBundle::QUESTION_1_ANSWER_C_TITLE)
       user_answers.push Answer.new(AnswersBundle::QUESTION_2_ANSWER_C_SERIE_ID, AnswersBundle::QUESTION_2_ANSWER_C_TITLE)
@@ -25,10 +24,10 @@ RSpec.describe AnswersEvaluator, "#evaluate" do
       user_answers.push Answer.new(AnswersBundle::QUESTION_5_ANSWER_E_SERIE_ID, AnswersBundle::QUESTION_5_ANSWER_E_TITLE)
 
       answers_evaluator = AnswersEvaluator.new
-      expect(answers_evaluator.evaluate(@series, user_answers)).to eq("Você é Silicon Valley: vive a tecnologia o tempo todo e faz disso um mantra para cada situação no dia.")
+      expect(answers_evaluator.evaluate(@series, user_answers)).to eq(SeriesBundle::SILICON_VALLEY_QUOTE)
     end
 
-    it "eeacc" do
+    it 'eeacc' do
       user_answers = []
       user_answers.push Answer.new(AnswersBundle::QUESTION_1_ANSWER_E_SERIE_ID, AnswersBundle::QUESTION_1_ANSWER_E_TITLE)
       user_answers.push Answer.new(AnswersBundle::QUESTION_2_ANSWER_E_SERIE_ID, AnswersBundle::QUESTION_2_ANSWER_E_TITLE)
@@ -37,10 +36,10 @@ RSpec.describe AnswersEvaluator, "#evaluate" do
       user_answers.push Answer.new(AnswersBundle::QUESTION_5_ANSWER_C_SERIE_ID, AnswersBundle::QUESTION_5_ANSWER_C_TITLE)
 
       answers_evaluator = AnswersEvaluator.new
-      expect(answers_evaluator.evaluate(@series, user_answers)).to eq("Você é Lost: faz as coisas sem ter total certeza se é o caminho certo ou se faz sentido, mas no final dá tudo certo.")
+      expect(answers_evaluator.evaluate(@series, user_answers)).to eq(SeriesBundle::LOST_QUOTE)
     end
 
-    it "edcba" do
+    it 'edcba' do
       user_answers = []
       user_answers.push Answer.new(AnswersBundle::QUESTION_1_ANSWER_E_SERIE_ID, AnswersBundle::QUESTION_1_ANSWER_E_TITLE)
       user_answers.push Answer.new(AnswersBundle::QUESTION_2_ANSWER_D_SERIE_ID, AnswersBundle::QUESTION_2_ANSWER_D_TITLE)
@@ -49,11 +48,10 @@ RSpec.describe AnswersEvaluator, "#evaluate" do
       user_answers.push Answer.new(AnswersBundle::QUESTION_5_ANSWER_A_SERIE_ID, AnswersBundle::QUESTION_5_ANSWER_A_TITLE)
 
       answers_evaluator = AnswersEvaluator.new
-      expect(answers_evaluator.evaluate(@series, user_answers)).to eq("Você é House of Cards: ataca o problema com método e faz de tudo para resolver a situação.")
+      expect(answers_evaluator.evaluate(@series, user_answers)).to eq(SeriesBundle::HOUSE_OF_CARDS_QUOTE)
     end
 
-
-    it "abcde" do
+    it 'abcde' do
       user_answers = []
       user_answers.push Answer.new(AnswersBundle::QUESTION_1_ANSWER_A_SERIE_ID, AnswersBundle::QUESTION_1_ANSWER_A_TITLE)
       user_answers.push Answer.new(AnswersBundle::QUESTION_2_ANSWER_B_SERIE_ID, AnswersBundle::QUESTION_2_ANSWER_B_TITLE)
@@ -62,10 +60,10 @@ RSpec.describe AnswersEvaluator, "#evaluate" do
       user_answers.push Answer.new(AnswersBundle::QUESTION_5_ANSWER_E_SERIE_ID, AnswersBundle::QUESTION_5_ANSWER_E_TITLE)
 
       answers_evaluator = AnswersEvaluator.new
-      expect(answers_evaluator.evaluate(@series, user_answers)).to eq("Você é Silicon Valley: vive a tecnologia o tempo todo e faz disso um mantra para cada situação no dia.")
+      expect(answers_evaluator.evaluate(@series, user_answers)).to eq(SeriesBundle::SILICON_VALLEY_QUOTE)
     end
 
-    it "aaabb" do
+    it 'aaabb' do
       user_answers = []
       user_answers.push Answer.new(AnswersBundle::QUESTION_1_ANSWER_A_SERIE_ID, AnswersBundle::QUESTION_1_ANSWER_A_TITLE)
       user_answers.push Answer.new(AnswersBundle::QUESTION_2_ANSWER_A_SERIE_ID, AnswersBundle::QUESTION_2_ANSWER_A_TITLE)
@@ -74,7 +72,7 @@ RSpec.describe AnswersEvaluator, "#evaluate" do
       user_answers.push Answer.new(AnswersBundle::QUESTION_5_ANSWER_B_SERIE_ID, AnswersBundle::QUESTION_5_ANSWER_B_TITLE)
 
       answers_evaluator = AnswersEvaluator.new
-      expect(answers_evaluator.evaluate(@series, user_answers)).to eq("Você é House of Cards: ataca o problema com método e faz de tudo para resolver a situação.")
+      expect(answers_evaluator.evaluate(@series, user_answers)).to eq(SeriesBundle::HOUSE_OF_CARDS_QUOTE)
     end
   end
 end

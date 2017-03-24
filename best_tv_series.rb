@@ -1,13 +1,13 @@
-require_relative "lib/series"
-require_relative "lib/series_bundle"
-require_relative "lib/question"
-require_relative "lib/questions_bundle"
-require_relative "lib/answer"
-require_relative "lib/answers_bundle"
-require_relative "lib/user_interface"
-require_relative "lib/answers_evaluator"
+require_relative 'lib/series'
+require_relative 'lib/series_bundle'
+require_relative 'lib/question'
+require_relative 'lib/questions_bundle'
+require_relative 'lib/answer'
+require_relative 'lib/answers_bundle'
+require_relative 'lib/user_interface'
+require_relative 'lib/answers_evaluator'
 
-#adding Series
+# adding Series
 
 series = []
 series.push Series.new(SeriesBundle::HOUSE_OF_CARDS_ID, SeriesBundle::HOUSE_OF_CARDS_NAME, SeriesBundle::HOUSE_OF_CARDS_QUOTE)
@@ -16,7 +16,7 @@ series.push Series.new(SeriesBundle::LOST_ID, SeriesBundle::LOST_NAME, SeriesBun
 series.push Series.new(SeriesBundle::BREAKING_BAD_ID, SeriesBundle::BREAKING_BAD_NAME, SeriesBundle::BREAKING_BAD_QUOTE)
 series.push Series.new(SeriesBundle::SILICON_VALLEY_ID, SeriesBundle::SILICON_VALLEY_NAME, SeriesBundle::SILICON_VALLEY_QUOTE)
 
-#adding Questions and its Answers
+# adding Questions and its Answers
 
 questions = []
 
@@ -64,4 +64,4 @@ ui = UserInterface.new
 user_answers = ui.run(questions)
 
 answers_evaluator = AnswersEvaluator.new
-answers_evaluator.evaluate(series, user_answers)
+puts answers_evaluator.evaluate(series, user_answers)

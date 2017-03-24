@@ -1,3 +1,4 @@
+# this class describes a question model
 class Question
   attr_reader :id, :title, :answers
 
