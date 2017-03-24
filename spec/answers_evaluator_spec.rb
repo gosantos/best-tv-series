@@ -55,11 +55,11 @@ RSpec.describe AnswersEvaluator, "#evaluate" do
 
     it "abcde" do
       user_answers = []
-      user_answers.push Answer.new('a', "Acorda cedo e come frutas cortadas metodicamente.")
-      user_answers.push Answer.new('b', "Levanta a senhora e jura protegê-la com sua vida.")
-      user_answers.push Answer.new('c', "Você questiona a realidade, as coisas e tudo mais. Sobe de escada.")
-      user_answers.push Answer.new('d', "Sugere que os colegas trabalhem na ideia de um novo projeto.")
-      user_answers.push Answer.new('e', "Acho que descobri uma forma de fazer aquela senhora rodar no Firefox.")
+      user_answers.push Answer.new(AnswersBundle::QUESTION_1_ANSWER_A_SERIE_ID, AnswersBundle::QUESTION_1_ANSWER_A_TITLE)
+      user_answers.push Answer.new(AnswersBundle::QUESTION_2_ANSWER_B_SERIE_ID, AnswersBundle::QUESTION_2_ANSWER_B_TITLE)
+      user_answers.push Answer.new(AnswersBundle::QUESTION_3_ANSWER_C_SERIE_ID, AnswersBundle::QUESTION_3_ANSWER_C_TITLE)
+      user_answers.push Answer.new(AnswersBundle::QUESTION_4_ANSWER_D_SERIE_ID, AnswersBundle::QUESTION_4_ANSWER_D_TITLE)
+      user_answers.push Answer.new(AnswersBundle::QUESTION_5_ANSWER_E_SERIE_ID, AnswersBundle::QUESTION_5_ANSWER_E_TITLE)
 
       answers_evaluator = AnswersEvaluator.new
       expect(answers_evaluator.evaluate(@series, user_answers)).to eq("Você é Silicon Valley: vive a tecnologia o tempo todo e faz disso um mantra para cada situação no dia.")
@@ -67,11 +67,11 @@ RSpec.describe AnswersEvaluator, "#evaluate" do
 
     it "aaabb" do
       user_answers = []
-      user_answers.push Answer.new('a', "Acorda cedo e come frutas cortadas metodicamente.")
-      user_answers.push Answer.new('a', "Ela vai atrapalhar seu horário. Oculte o corpo.")
-      user_answers.push Answer.new('a', "Convence parte das pessoas a esperarem o próximo.")
-      user_answers.push Answer.new('e', "Desabafa sobre como odeia PHP. Todo mundo na sala adora PHP.")
-      user_answers.push Answer.new('e', "Acho que descobri uma forma de fazer aquela senhora rodar no Firefox.")
+      user_answers.push Answer.new(AnswersBundle::QUESTION_1_ANSWER_A_SERIE_ID, AnswersBundle::QUESTION_1_ANSWER_A_TITLE)
+      user_answers.push Answer.new(AnswersBundle::QUESTION_2_ANSWER_A_SERIE_ID, AnswersBundle::QUESTION_2_ANSWER_A_TITLE)
+      user_answers.push Answer.new(AnswersBundle::QUESTION_3_ANSWER_A_SERIE_ID, AnswersBundle::QUESTION_3_ANSWER_A_TITLE)
+      user_answers.push Answer.new(AnswersBundle::QUESTION_4_ANSWER_B_SERIE_ID, AnswersBundle::QUESTION_4_ANSWER_B_TITLE)
+      user_answers.push Answer.new(AnswersBundle::QUESTION_5_ANSWER_B_SERIE_ID, AnswersBundle::QUESTION_5_ANSWER_B_TITLE)
 
       answers_evaluator = AnswersEvaluator.new
       expect(answers_evaluator.evaluate(@series, user_answers)).to eq("Você é House of Cards: ataca o problema com método e faz de tudo para resolver a situação.")
