@@ -1,4 +1,4 @@
-require 'controllers/answers_evaluator'
+  require 'controllers/answers_evaluator'
 require 'models/series'
 require 'helpers/series_bundle'
 require 'models/answer'

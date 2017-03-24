@@ -40,19 +40,7 @@ class UserInterface
   def get_user_entry(answers)
     puts CommonBundle::ALTERNATIVES_USER_MSG
 
-    case gets.chomp.downcase
-    when 'a'
-      @user_answers.push answers[0]
-    when 'b'
-      @user_answers.push answers[1]
-    when 'c'
-      @user_answers.push answers[2]
-    when 'd'
-      @user_answers.push answers[3]
-    when 'e'
-      @user_answers.push answers[4]
-    else
-      puts CommonBundle::INVALID_ALTERNATIVE_MSG
-    end
+    letters = ('a'..'e').to_a
+    @user_answers.push answers[letters.index(gets.chomp.downcase)]
   end
 end

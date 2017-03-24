@@ -37,17 +37,6 @@ class AnswersEvaluator
   # using that approach, all mandatory cases are satisfied
   # moreover the app will use a coherent algorithm
   def count_votes(series_id)
-    case series_id
-    when 'a'
-      @vote_counter[:a] = [@vote_counter[:a].first + 1, Time.new]
-    when 'b'
-      @vote_counter[:b] = [@vote_counter[:b].first + 1, Time.new]
-    when 'c'
-      @vote_counter[:c] = [@vote_counter[:c].first + 1, Time.new]
-    when 'd'
-      @vote_counter[:d] = [@vote_counter[:d].first + 1, Time.new]
-    when 'e'
-      @vote_counter[:e] = [@vote_counter[:e].first + 1, Time.new]
-    end
+    @vote_counter[series_id.to_sym] = [@vote_counter[series_id.to_sym].first + 1, Time.new]
   end
 end
