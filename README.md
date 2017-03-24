@@ -8,7 +8,7 @@ Baseado nas respostas do usuário, seu algoritmo deverá definir qual série mel
 
 ## Pré-requisitos
 
-Make sure you have all of the following prerequisites installed in your machine:
+Para rodar a aplicação as seguintes dependencias são necessárias:
 
 * Git - [Download & Install Git](https://git-scm.com/downloads)
 * Ruby - [Download & Install Ruby](https://www.ruby-lang.org/en/documentation/installation/)
