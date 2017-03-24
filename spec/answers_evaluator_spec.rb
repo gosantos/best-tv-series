@@ -1,8 +1,8 @@
-require 'answers_evaluator'
-require 'series'
-require 'series_bundle'
-require 'answer'
-require 'answers_bundle'
+require 'controllers/answers_evaluator'
+require 'models/series'
+require 'helpers/series_bundle'
+require 'models/answer'
+require 'helpers/answers_bundle'
 
 RSpec.describe AnswersEvaluator, '#evaluate' do
   before do
@@ -14,8 +14,8 @@ RSpec.describe AnswersEvaluator, '#evaluate' do
     @series.push Series.new(SeriesBundle::SILICON_VALLEY_ID, SeriesBundle::SILICON_VALLEY_NAME, SeriesBundle::SILICON_VALLEY_QUOTE)
   end
 
-  describe 'something' do
-    it 'ccaee' do
+  describe 'Given the following sequence of answers c-c-a-e-e' do
+    it 'should return the Silicon Valley Quote' do
       user_answers = []
       user_answers.push Answer.new(AnswersBundle::QUESTION_1_ANSWER_C_SERIE_ID, AnswersBundle::QUESTION_1_ANSWER_C_TITLE)
       user_answers.push Answer.new(AnswersBundle::QUESTION_2_ANSWER_C_SERIE_ID, AnswersBundle::QUESTION_2_ANSWER_C_TITLE)
@@ -26,8 +26,10 @@ RSpec.describe AnswersEvaluator, '#evaluate' do
       answers_evaluator = AnswersEvaluator.new
       expect(answers_evaluator.evaluate(@series, user_answers)).to eq(SeriesBundle::SILICON_VALLEY_QUOTE)
     end
+  end
 
-    it 'eeacc' do
+  describe 'Given the following sequence of answers e-e-a-c-c' do
+    it 'should return the Lost Quote' do
       user_answers = []
       user_answers.push Answer.new(AnswersBundle::QUESTION_1_ANSWER_E_SERIE_ID, AnswersBundle::QUESTION_1_ANSWER_E_TITLE)
       user_answers.push Answer.new(AnswersBundle::QUESTION_2_ANSWER_E_SERIE_ID, AnswersBundle::QUESTION_2_ANSWER_E_TITLE)
@@ -38,8 +40,10 @@ RSpec.describe AnswersEvaluator, '#evaluate' do
       answers_evaluator = AnswersEvaluator.new
       expect(answers_evaluator.evaluate(@series, user_answers)).to eq(SeriesBundle::LOST_QUOTE)
     end
+  end
 
-    it 'edcba' do
+  describe 'Given the following sequence of answers e-d-c-a-b' do
+    it 'should return the House of Cards Quote' do
       user_answers = []
       user_answers.push Answer.new(AnswersBundle::QUESTION_1_ANSWER_E_SERIE_ID, AnswersBundle::QUESTION_1_ANSWER_E_TITLE)
       user_answers.push Answer.new(AnswersBundle::QUESTION_2_ANSWER_D_SERIE_ID, AnswersBundle::QUESTION_2_ANSWER_D_TITLE)
@@ -50,8 +54,10 @@ RSpec.describe AnswersEvaluator, '#evaluate' do
       answers_evaluator = AnswersEvaluator.new
       expect(answers_evaluator.evaluate(@series, user_answers)).to eq(SeriesBundle::HOUSE_OF_CARDS_QUOTE)
     end
+  end
 
-    it 'abcde' do
+  describe 'Given the following sequence of answers a-b-c-d-e' do
+    it 'should return the Silicon Valley Quote' do
       user_answers = []
       user_answers.push Answer.new(AnswersBundle::QUESTION_1_ANSWER_A_SERIE_ID, AnswersBundle::QUESTION_1_ANSWER_A_TITLE)
       user_answers.push Answer.new(AnswersBundle::QUESTION_2_ANSWER_B_SERIE_ID, AnswersBundle::QUESTION_2_ANSWER_B_TITLE)
@@ -62,8 +68,10 @@ RSpec.describe AnswersEvaluator, '#evaluate' do
       answers_evaluator = AnswersEvaluator.new
       expect(answers_evaluator.evaluate(@series, user_answers)).to eq(SeriesBundle::SILICON_VALLEY_QUOTE)
     end
+  end
 
-    it 'aaabb' do
+  describe 'Given the following sequence of answers a-b-c-d-e' do
+    it 'should return the House of Cards Quote' do
       user_answers = []
       user_answers.push Answer.new(AnswersBundle::QUESTION_1_ANSWER_A_SERIE_ID, AnswersBundle::QUESTION_1_ANSWER_A_TITLE)
       user_answers.push Answer.new(AnswersBundle::QUESTION_2_ANSWER_A_SERIE_ID, AnswersBundle::QUESTION_2_ANSWER_A_TITLE)

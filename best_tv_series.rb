@@ -1,11 +1,11 @@
-require_relative 'lib/series'
-require_relative 'lib/series_bundle'
-require_relative 'lib/question'
-require_relative 'lib/questions_bundle'
-require_relative 'lib/answer'
-require_relative 'lib/answers_bundle'
-require_relative 'lib/user_interface'
-require_relative 'lib/answers_evaluator'
+require_relative 'lib/models/series'
+require_relative 'lib/helpers/series_bundle'
+require_relative 'lib/models/question'
+require_relative 'lib/helpers/questions_bundle'
+require_relative 'lib/models/answer'
+require_relative 'lib/helpers/answers_bundle'
+require_relative 'lib/controllers/user_interface'
+require_relative 'lib/controllers/answers_evaluator'
 
 # adding Series
 

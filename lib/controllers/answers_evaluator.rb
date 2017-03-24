@@ -1,5 +1,5 @@
 require 'date'
-require_relative 'common_bundle'
+require_relative '../helpers/common_bundle'
 # this class contains the algorithm responsible for getting the user answers
 # and check which TV Show fits better to the user
 class AnswersEvaluator
@@ -14,7 +14,7 @@ class AnswersEvaluator
   def evaluate(series, user_answers)
     # iterate for all user answers and counts its respective votes
     user_answers.each do |user_answer|
-      count_answer(user_answer.series_id)
+      count_votes(user_answer.series_id)
     end
 
     max_voted = max_voted_series
@@ -25,6 +25,8 @@ class AnswersEvaluator
     @final_answer
   end
 
+  private
+
   def max_voted_series
     # using _ to signalize the key is not going to be used
     @vote_counter.select { |_, v| v == @vote_counter.values.max }
@@ -34,7 +36,7 @@ class AnswersEvaluator
   # the time is used to verify which series was last voted
   # using that approach, all mandatory cases are satisfied
   # moreover the app will use a coherent algorithm
-  def count_answer(series_id)
+  def count_votes(series_id)
     case series_id
     when 'a'
       @vote_counter[:a] = [@vote_counter[:a].first + 1, Time.new]

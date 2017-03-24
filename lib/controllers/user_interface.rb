@@ -1,4 +1,4 @@
-require_relative 'common_bundle'
+require_relative '../helpers/common_bundle'
 
 # this class is responsbile to interact with the user
 class UserInterface
@@ -14,6 +14,8 @@ class UserInterface
     @user_answers
   end
 
+  private
+
   def print_questions(questions)
     numbers = (1..5).to_a
 
@@ -26,7 +28,9 @@ class UserInterface
   end
 
   def print_answers(answers)
+    # this is used in order to create fake labels to the answers
     letters = ('a'..'e').to_a
+    # the answers are shuffled to create a random order
     answers.shuffle!
     answers.each do |answer|
       puts "#{letters.slice!(0)}) #{answer.title}"
